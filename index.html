@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Join Unborn Universe, a one-life hardcore Minecraft server. Server IP, Java 1.21.11 join steps, connection fixes and Discord.">
+<meta property="og:title" content="Unborn Universe · One life. One universe.">
+<meta property="og:description" content="A one-life hardcore Minecraft server. Die here, and you were never born.">
+<meta property="og:url" content="https://unbornsmp.online/">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 9 8' shape-rendering='crispEdges'%3E%3Cpath fill='%236e070c' d='M1 0h2v1H1zM6 0h2v1H6zM0 1h1v3H0zM8 1h1v3H8zM4 1h1v1H4zM3 1h1v1H3zM5 1h1v1H5zM1 4h1v1H1zM7 4h1v1H7zM2 5h1v1H2zM6 5h1v1H6zM3 6h1v1H3zM5 6h1v1H5zM4 7h1v1H4z'/%3E%3Cpath fill='%23d4141c' d='M1 1h2v1H1zM6 1h2v1H6zM1 2h3v2H1zM4 2h4v2H4zM2 4h5v1H2zM3 5h3v1H3zM4 6h1v1H4z'/%3E%3Cpath fill='%23fff' d='M2 2h1v1H2z'/%3E%3C/svg%3E">
+<title>Join Unborn Universe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: sticky site nav, wide-tracked hero with the IP box, then a guide column beside a sticky "on this page" rail. */
+:root {
+  padding-top: env(safe-area-inset-top, 0px);
+  --void: #000;
+  --panel: #080808;
+  --ink: #f1f1ef;
+  --ash: #8b8b88;
+  --smoke: #3a3a38;
+  --line: #1c1c1b;
+  --heart: #d4141c;
+  --display: "Archivo", "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  --body: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--void); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.65; overflow-x: hidden; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--void); }
+.gutter { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1120px; margin: 0 auto; }
+h1, h2, h3 { margin: 0; text-wrap: balance; }
+p { margin: 0; }
+a { color: inherit; }
+button { font: inherit; color: inherit; }
+code { font-family: var(--mono); }
+:focus-visible { outline: 1px solid var(--ink); outline-offset: 3px; }
+.label { font-family: var(--mono); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--ash); }
+.wide { font-family: var(--display); font-stretch: 125%; text-transform: uppercase; }
+.heart { display: inline-block; line-height: 0; }
+
+/* nav */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: rgba(0,0,0,.88); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; gap: 28px; padding-block: 16px; flex-wrap: wrap; }
+.mark { display: flex; align-items: center; gap: 12px; font-family: var(--display); font-stretch: 125%; font-weight: 700; font-size: 13px; letter-spacing: .32em; text-decoration: none; }
+.top nav { display: flex; gap: 24px; flex-wrap: wrap; flex: 1; }
+.top nav a { text-decoration: none; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--ash); transition: color .4s; }
+.top nav a:hover, .top nav a[aria-current] { color: var(--ink); }
+.discord-btn { display: inline-flex; align-items: center; gap: 10px; padding: 9px 16px; border: 1px solid var(--smoke); text-decoration: none; font-size: 11px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; transition: border-color .4s; }
+.discord-btn:hover { border-color: var(--ink); }
+@media (max-width: 760px) { .top nav { order: 3; flex-basis: 100%; gap: 18px; } }
+
+/* hero */
+.hero { padding-block: 72px 56px; border-bottom: 1px solid var(--line); }
+.hero .wrap { display: flex; flex-direction: column; gap: 24px; }
+.hero h1 { font-size: clamp(1.7rem, 5.4vw, 4.2rem); line-height: 1.08; letter-spacing: .14em; font-weight: 800; animation: unfold 2.6s cubic-bezier(.16,.8,.1,1) both; }
+.hero .lede { color: var(--ash); max-width: 58ch; font-size: 17px; }
+.hero .lede strong { color: var(--ink); font-weight: 600; }
+@keyframes unfold { from { opacity: 0; letter-spacing: .5em; filter: blur(5px); } }
+.ipbox { display: flex; flex-wrap: wrap; gap: 0; max-width: 640px; border: 1px solid var(--smoke); }
+.ipbox .addr { flex: 1 1 260px; display: flex; align-items: center; gap: 14px; padding: 16px 20px; min-width: 0; }
+.ipbox .addr code { font-size: 17px; letter-spacing: .04em; user-select: all; overflow-wrap: anywhere; }
+.ipbox .dot { width: 8px; height: 8px; background: var(--ink); flex: none; animation: pulse 2.4s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: .25; } }
+.ipbox button { background: var(--ink); color: var(--void); border: 0; padding: 16px 24px; cursor: pointer; font-size: 11px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; flex: 0 0 auto; transition: background .3s; }
+.ipbox button:hover { background: #fff; }
+.meta { display: flex; gap: 28px; flex-wrap: wrap; }
+.meta div { display: flex; flex-direction: column; gap: 2px; }
+.meta .v { font-family: var(--mono); font-size: 13px; }
+.placeholder { font-family: var(--mono); font-size: 11px; color: var(--smoke); }
+
+/* body layout */
+.guide { padding-block: 56px 96px; }
+.guide .wrap { display: grid; grid-template-columns: 1fr 220px; gap: 64px; align-items: start; }
+.guide main { display: flex; flex-direction: column; gap: 72px; min-width: 0; }
+.rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 84px); display: flex; flex-direction: column; gap: 12px; padding-left: 20px; border-left: 1px solid var(--line); }
+.rail a { text-decoration: none; font-size: 13px; color: var(--ash); transition: color .3s; }
+.rail a:hover { color: var(--ink); }
+@media (max-width: 900px) { .guide .wrap { grid-template-columns: 1fr; } .rail { display: none; } }
+
+section > header { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+section h2 { font-family: var(--display); font-stretch: 125%; font-size: clamp(1.1rem, 2.4vw, 1.5rem); letter-spacing: .16em; text-transform: uppercase; font-weight: 800; }
+section > header p, .prose { color: var(--ash); max-width: 64ch; }
+.prose strong, section > header p strong { color: var(--ink); font-weight: 600; }
+
+.needs { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); }
+.needs div { padding: 22px; border-left: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
+.needs div:first-child { border-left: 0; }
+.needs .v { font-weight: 600; }
+.needs p { color: var(--ash); font-size: 14px; }
+@media (max-width: 640px) { .needs { grid-template-columns: 1fr; } .needs div { border-left: 0; border-top: 1px solid var(--line); } .needs div:first-child { border-top: 0; } }
+
+.steps { list-style: none; margin: 0; padding: 0; counter-reset: s; }
+.steps li { counter-increment: s; display: grid; grid-template-columns: 64px 1fr; gap: 20px; padding-block: 26px; border-top: 1px solid var(--line); }
+.steps li:last-child { border-bottom: 1px solid var(--line); }
+.steps li::before { content: counter(s, decimal-leading-zero); font-family: var(--mono); font-size: 13px; color: var(--ash); padding-top: 3px; }
+.steps h3 { font-size: 16px; font-weight: 700; letter-spacing: .06em; margin-bottom: 6px; }
+.steps p { color: var(--ash); max-width: 60ch; }
+.steps code, .fix code, .prose code { color: var(--ink); background: var(--panel); border: 1px solid var(--line); padding: 1px 6px; font-size: .9em; }
+.steps li:last-child::before { color: var(--heart); }
+
+.fixes { display: flex; flex-direction: column; }
+.fix { border-top: 1px solid var(--line); }
+.fix:last-child { border-bottom: 1px solid var(--line); }
+.fix summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 20px; font-weight: 600; letter-spacing: .04em; }
+.fix summary::-webkit-details-marker { display: none; }
+.fix summary::after { content: "+"; font-family: var(--mono); color: var(--ash); font-size: 18px; transition: transform .4s; }
+.fix[open] summary::after { transform: rotate(45deg); }
+.fix summary .err { font-family: var(--mono); font-size: 12px; font-weight: 400; color: var(--ash); margin-left: 12px; }
+.fix p { color: var(--ash); max-width: 62ch; padding-bottom: 22px; }
+
+.community { border: 1px solid var(--smoke); padding: 32px; display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center; }
+.community p { color: var(--ash); max-width: 52ch; margin-top: 10px; }
+.community .link { font-family: var(--mono); font-size: 13px; color: var(--ink); margin-top: 14px; display: block; overflow-wrap: anywhere; }
+.join-discord { display: inline-flex; align-items: center; justify-content: center; padding: 16px 26px; background: var(--ink); color: var(--void); text-decoration: none; font-size: 11px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; transition: background .3s; }
+.join-discord:hover { background: #fff; }
+@media (max-width: 640px) { .community { grid-template-columns: 1fr; padding: 24px; } }
+
+.warn { display: grid; grid-template-columns: auto 1fr; gap: 20px; padding: 24px 0 0; border-top: 1px solid var(--heart); }
+.warn h2 { color: var(--ink); }
+.warn p { color: var(--ash); max-width: 62ch; margin-top: 10px; }
+
+footer { border-top: 1px solid var(--line); padding-block: 40px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
+footer p { font-size: 12px; letter-spacing: .3em; text-transform: uppercase; color: var(--ash); }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<header class="top gutter">
+  <div class="wrap">
+    <a class="mark" href="#top"><span class="heart" data-heart="16"></span>UNBORN</a>
+    <nav aria-label="Site">
+      <a href="#top" aria-current="page">How to join</a>
+      <a href="#steps">Server IP</a>
+      <a href="#fixes">Fixes</a>
+      <a href="#rules">Rules</a>
+    </nav>
+    <a class="discord-btn" href="https://discord.gg/cPBZpdUvG" target="_blank" rel="noopener">Discord</a>
+  </div>
+</header>
+
+<div class="hero gutter" id="top">
+  <div class="wrap">
+    <span class="label">Minecraft Java Edition · 1.21.11</span>
+    <h1 class="wide">Enter the<br>universe</h1>
+    <p class="lede">Join Unborn Universe at <strong>play.unbornsmp.online</strong> with Minecraft Java Edition 1.21.11. Read the rules first. <strong>You only get one life.</strong></p>
+    <div class="ipbox">
+      <div class="addr"><span class="dot" aria-hidden="true"></span><code id="ip">play.unbornsmp.online</code></div>
+      <button id="copy" type="button">Copy IP</button>
+    </div>
+    <div class="meta">
+      <div><span class="label">Version</span><span class="v">Java 1.21.11</span></div>
+      <div><span class="label">Mode</span><span class="v">Hardcore · Hard</span></div>
+      <div><span class="label">Respawns</span><span class="v">0</span></div>
+    </div>
+    <p class="placeholder">Server opening soon. The address goes live at launch.</p>
+  </div>
+</div>
+
+<div class="guide gutter">
+  <div class="wrap">
+    <main>
+      <section id="before">
+        <header>
+          <span class="label">Before you start</span>
+          <h2>What you need</h2>
+        </header>
+        <div class="needs">
+          <div><span class="label">Game</span><span class="v">Minecraft Java Edition</span><p>A paid account signed in through the official launcher.</p></div>
+          <div><span class="label">Version</span><span class="v">1.21.11</span><p>Pick this release in the launcher before you start the game.</p></div>
+          <div><span class="label">Mods</span><span class="v">None required</span><p>Performance mods like Sodium are fine. Cheat clients get you banned.</p></div>
+        </div>
+      </section>
+
+      <section id="steps">
+        <header>
+          <span class="label">Java Edition</span>
+          <h2>Join in four steps</h2>
+        </header>
+        <ol class="steps">
+          <li><div><h3>Start Minecraft 1.21.11</h3><p>Open the Minecraft Launcher, go to Installations, and choose a profile set to release <code>1.21.11</code>. Press Play.</p></div></li>
+          <li><div><h3>Add the server</h3><p>Click Multiplayer, then Add Server. Type <code>Unborn Universe</code> as the server name. The name only labels the entry in your list.</p></div></li>
+          <li><div><h3>Enter the address</h3><p>Paste <code>play.unbornsmp.online</code> into Server Address. Leave out <code>https://</code>, slashes, spaces and port numbers.</p></div></li>
+          <li><div><h3>Join, carefully</h3><p>Click Done, select Unborn Universe and press Join Server. From this moment your life counts. If you die, you do not come back.</p></div></li>
+        </ol>
+      </section>
+
+      <section id="fixes">
+        <header>
+          <span class="label">Troubleshooting</span>
+          <h2>If you can't connect</h2>
+        </header>
+        <div class="fixes">
+          <details class="fix"><summary><span>Unknown host<span class="err">java.net.UnknownHostException</span></span></summary><p>The address is spelled wrong or has extra text. Type <code>play.unbornsmp.online</code> again with no prefix, slash or port. If it still fails, check Discord in case the server is down.</p></details>
+          <details class="fix"><summary><span>Outdated client or server</span></summary><p>Your game is on a different release. Go back to the launcher, set your installation to <code>1.21.11</code>, and start the game again.</p></details>
+          <details class="fix"><summary><span>Timed out or connection refused</span></summary><p>The server is probably restarting. Wait a minute, then try again. You don't need to forward ports on your router to join.</p></details>
+          <details class="fix"><summary><span>You are unborn</span></summary><p>You died, so the server will not let you play again. If you think the death was caused by a bug or a false anticheat flag, open a ticket in Discord. Staff review every appeal and can restore a player.</p></details>
+          <details class="fix"><summary><span>Still stuck</span></summary><p>Post in the support channel on Discord. Include the exact error, your Minecraft version and the address you typed. Hide any personal details in screenshots.</p></details>
+        </div>
+      </section>
+
+      <section id="discord">
+        <div class="community">
+          <div>
+            <span class="label">Community</span>
+            <h2 style="margin-top:10px">Join the Discord</h2>
+            <p>Get server announcements, connection help and news from the wars. You join the game through Minecraft. Discord is where the community talks.</p>
+            <span class="link">discord.gg/cPBZpdUvG</span>
+          </div>
+          <a class="join-discord" href="https://discord.gg/cPBZpdUvG" target="_blank" rel="noopener">Open Discord</a>
+        </div>
+      </section>
+
+      <section id="rules">
+        <div class="warn">
+          <span class="heart" data-heart="28"></span>
+          <div>
+            <h2>Protect your account</h2>
+            <p>Staff will never ask for your Microsoft password, sign-in code or recovery code. If anyone asks, in game or on Discord, it is a scam. Losing your account is the one way to lose your life without dying.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="rail" aria-label="On this page">
+      <span class="label">On this page</span>
+      <a href="#before">What you need</a>
+      <a href="#steps">Join in four steps</a>
+      <a href="#fixes">If you can't connect</a>
+      <a href="#discord">Discord</a>
+      <a href="#rules">Protect your account</a>
+    </aside>
+  </div>
+</div>
+
+<footer class="gutter">
+  <div class="wrap">
+    <a class="mark" href="#top"><span class="heart" data-heart="14"></span>UNBORN UNIVERSE</a>
+    <p>One life. One universe.</p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const HEART = ['.oo...oo.','orro.orro','ohrrorrro','orrrrrrro','.orrrrro.','..orrro..','...oro...','....o....'];
+  const COL = { o: '#6e070c', r: '#d4141c', h: '#ffffff' };
+  document.querySelectorAll('[data-heart]').forEach(el => {
+    const px = +el.dataset.heart; let rects = '';
+    HEART.forEach((row, y) => [...row].forEach((c, x) => { if (c !== '.') rects += `<rect x="${x}" y="${y}" width="1.02" height="1.02" fill="${COL[c]}"/>`; }));
+    el.innerHTML = `<svg viewBox="0 0 9 8" width="${px}" height="${Math.round(px * 8 / 9)}" shape-rendering="crispEdges" aria-hidden="true">${rects}</svg>`;
+  });
+  const btn = document.getElementById('copy'), code = document.getElementById('ip');
+  btn.addEventListener('click', () => {
+    const done = () => { btn.textContent = 'Copied'; setTimeout(() => btn.textContent = 'Copy IP', 1800); };
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents(code); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Press Ctrl+C'; };
+    try { navigator.clipboard.writeText(code.textContent).then(done, fallback); } catch (e) { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
