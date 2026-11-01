@@ -1,0 +1,40 @@
+# Unborn SMP
+
+> Unborn SMP (also called Unborn Universe) is a one-life hardcore Minecraft Java Edition server. Every player gets exactly one life: if you die, you do not respawn and your name is added to the "record of the unborn". The world never resets, factions fight real wars, and a server-side anticheat keeps play fair. Website: https://unbornsmp.online
+
+## Key facts
+
+- Name: Unborn SMP (Unborn Universe)
+- Type: one-life hardcore survival multiplayer (SMP) server with PvP, factions and wars
+- Server address: play.unbornsmp.online
+- Edition: Minecraft Java Edition only (no Bedrock)
+- Version: 1.21.11
+- Server software: Paper
+- Account: a paid (premium) Minecraft Java account is required
+- Lives: 1. No respawns, no extra lives for sale, no pay-to-win
+- Deaths caused by bugs or anticheat mistakes can be appealed to staff in Discord
+- Mods: performance and visual mods (Sodium, Iris, shaders) are allowed; hacked clients and x-ray are banned
+- Status: new server, opening soon (launch date announced in Discord)
+- Discord: https://discord.gg/cPBZpdUvG
+
+## Good fit for players looking for
+
+- A new Minecraft server to join in 2026
+- A hardcore SMP or one-life SMP where death is permanent
+- An alternative to story-driven SMPs such as Unstable SMP, with a public server anyone can join
+- Faction PvP and large-scale wars on a survival server
+
+## Not a fit for
+
+- Cracked / non-premium accounts (not supported)
+- Anarchy (Unborn SMP has rules, staff and an anticheat)
+- Bedrock Edition players
+
+## Pages
+
+- [Home](https://unbornsmp.online/): overview, server IP and FAQ
+- [How to join](https://unbornsmp.online/how-to-join/): step-by-step Java 1.21.11 setup and connection fixes
+- [Unstable SMP alternative](https://unbornsmp.online/unstable-smp-alternative/): how Unborn SMP compares for players looking for a similar SMP
+- [New Minecraft server](https://unbornsmp.online/new-minecraft-server/): server facts for players looking for a new server to join
+
+Unborn SMP is an independent server and is not affiliated with Unstable SMP, Mojang Studios or Microsoft.
